@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff4d6d">
+  <title>For My Kittu ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-hearts" aria-hidden="true"></div>
+
+  <section id="introScreen" class="screen intro-screen">
+    <div class="intro-card">
+      <div class="intro-heart" aria-hidden="true">❤</div>
+      <p class="small-love">A little something made with love</p>
+      <h1>For My <span>Kittu</span> ❤️</h1>
+      <p class="intro-text">I have something to show you...</p>
+      <button id="startButton" class="start-button">Start ❤️</button>
+    </div>
+  </section>
+
+  <main id="gameScreen" class="screen game-screen hidden">
+    <div class="top-message">
+      <span id="shotStatus">Hit my heart ❤️</span>
+      <span id="hitCounter">0 / 5</span>
+    </div>
+
+    <div id="heartStage" class="heart-stage">
+      <div id="impactFlash"></div>
+
+      <div id="heartTarget" class="heart-target">
+        <svg class="heart-svg" viewBox="0 0 200 180" aria-hidden="true">
+          <path class="heart-shape"
+            d="M100 165 C82 147 18 108 18 62 C18 31 41 13 67 13 C82 13 94 20 100 33 C106 20 118 13 133 13 C159 13 182 31 182 62 C182 108 118 147 100 165 Z"/>
+          <path class="crack crack-1" d="M105 43 L94 65 L106 78 L96 98 L108 113"/>
+          <path class="crack crack-2" d="M72 59 L88 75 L78 91 L94 108"/>
+          <path class="crack crack-3" d="M130 63 L116 81 L126 96 L111 121"/>
+          <path class="crack crack-4" d="M62 96 L83 107 L78 130"/>
+        </svg>
+      </div>
+
+      <div id="brokenHeart" class="broken-heart" aria-hidden="true">
+        <div class="piece piece-1">❤</div>
+        <div class="piece piece-2">❤</div>
+        <div class="piece piece-3">❤</div>
+        <div class="piece piece-4">❤</div>
+      </div>
+
+      <div id="loveMessage" class="love-message" aria-live="polite"></div>
+    </div>
+
+    <div id="photoReveal" class="photo-reveal hidden">
+      <div class="photo-glow"></div>
+      <img src="assets/our-photo.jpg" alt="Shlok and Kittu together">
+      <h2>Shlok and Kittu ❤️</h2>
+      <p>My favourite love story.</p>
+    </div>
+
+    <div id="bowArea" class="bow-area">
+      <div class="aim-hint" id="aimHint">Pull & release 🏹</div>
+      <svg id="bowSvg" class="bow-svg" viewBox="0 0 180 220" aria-hidden="true">
+        <path class="bow-wood" d="M40 10 Q135 110 40 210"/>
+        <line id="stringTop" class="bow-string" x1="40" y1="10" x2="88" y2="110"/>
+        <line id="stringBottom" class="bow-string" x1="40" y1="210" x2="88" y2="110"/>
+      </svg>
+
+      <div id="arrow" class="arrow">
+        <div class="arrow-feathers"></div>
+        <div class="arrow-shaft"></div>
+        <div class="arrow-head"></div>
+      </div>
+
+      <div id="dragHandle" class="drag-handle" aria-label="Pull the bowstring"></div>
+    </div>
+  </main>
+
+  <!-- Audio -->
+  <audio id="backgroundMusic" loop preload="auto">
+    <source src="assets/background-music.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="arrowSound" preload="auto">
+    <source src="assets/arrow-shot.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="heartOpenSound" preload="auto">
+    <source src="assets/heart-open.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicButton" class="music-button" aria-label="Mute music" title="Music">🔊</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
